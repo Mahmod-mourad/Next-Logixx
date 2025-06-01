@@ -10,6 +10,19 @@ import { ServiceCard } from "@/components/service-card"
 import { MainNav } from "@/components/main-nav"
 import { Footer } from "@/components/footer"
 import { PageTransition } from "@/components/page-transition"
+import HeroSlider from "@/components/HeroSlider"
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+// import required modules
+import { Pagination, Autoplay } from 'swiper/modules';
+
+import styles from '@/components/HomeSlider.module.css';
 
 export default function Home() {
   // Define values for cards to avoid duplication
@@ -18,7 +31,7 @@ export default function Home() {
       id: "reliability",
       icon: (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://images.unsplash.com/photo-1542831371-29b0f74f9713"
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -39,7 +52,7 @@ export default function Home() {
       id: "innovation",
       icon: (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://images.unsplash.com/photo-1542831371-29b0f74f9713"
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -67,7 +80,7 @@ export default function Home() {
       id: "team",
       icon: (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://images.unsplash.com/photo-1542831371-29b0f74f9713"
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -139,6 +152,42 @@ export default function Home() {
     },
   ]
 
+  // Define slider content (repeating the desired hero content 4 times)
+  const sliderItems = [
+    {
+      id: 1,
+      title: "نُمهد الطريق لنجاح الشركات الناشئة",
+      description: "خدماتنا مصممة لمساعدتك على النمو والابتكار والتميز في السوق الرقمي.",
+      image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713",
+      ctaText: "احجز استشارة مجانية",
+      ctaLink: "/contact",
+    },
+    {
+      id: 2,
+      title: "نُمهد الطريق لنجاح الشركات الناشئة",
+      description: "خدماتنا مصممة لمساعدتك على النمو والابتكار والتميز في السوق الرقمي.",
+      image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713",
+      ctaText: "احجز استشارة مجانية",
+      ctaLink: "/contact",
+    },
+    {
+      id: 3,
+      title: "نُمهد الطريق لنجاح الشركات الناشئة",
+      description: "خدماتنا مصممة لمساعدتك على النمو والابتكار والتميز في السوق الرقمي.",
+      image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713",
+      ctaText: "احجز استشارة مجانية",
+      ctaLink: "/contact",
+    },
+    {
+      id: 4,
+      title: "نُمهد الطريق لنجاح الشركات الناشئة",
+      description: "خدماتنا مصممة لمساعدتك على النمو والابتكار والتميز في السوق الرقمي.",
+      image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713",
+      ctaText: "احجز استشارة مجانية",
+      ctaLink: "/contact",
+    },
+  ];
+
   return (
     <div className={`flex min-h-screen flex-col bg-white text-slate-900 dark:bg-slate-950 dark:text-white theme-transition`} dir="rtl">
       {/* Header */}
@@ -147,53 +196,13 @@ export default function Home() {
       <PageTransition>
         <main className="flex-1">
           {/* Hero Section */}
-          <section id="home" className="relative min-h-screen flex items-center pt-20 bg-blue-900">
-            <div className="absolute inset-0 bg-blue-900"></div>
-            {/* يمكن إضافة تأثيرات خلفية إضافية هنا إذا رغبت */}
-
-            <div className="container relative z-10 px-2 sm:px-4">
-              <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 items-center">
-                {/* Hero Content */}
-                <div className="text-center lg:text-right">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 break-words">
-                    نُمهد الطريق <span className="text-[#00e6d8]">لنجاح الشركات الناشئة</span>
-                  </h1>
-                  <p className="mt-4 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg text-blue-100 mb-8 break-words">
-                    خدماتنا مصممة لمساعدتك على النمو والابتكار والتميز في السوق الرقمي.
-                  </p>
-                  <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-end gap-4">
-                    <Button
-                      size="lg"
-                      className="bg-[#00e6d8] hover:bg-[#00bfae] text-blue-900 font-bold rounded-md px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg shadow-md transition-all w-full sm:w-auto"
-                      asChild
-                    >
-                      <Link href="/contact">احجز استشارة مجانية</Link>
-                    </Button>
-                  </div>
-                </div>
-
-                {/* Hero Image */}
-                <div className="relative flex justify-center lg:justify-end mt-8 lg:mt-0">
-                  <div className="relative w-60 h-60 sm:w-80 sm:h-80 max-w-full">
-                    <Image
-                      src="/rocket-hero.svg"
-                      alt="Rocket Launch Illustration"
-                      width={320}
-                      height={320}
-                      className="object-contain drop-shadow-2xl w-full h-full"
-                      priority
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          <HeroSlider />
 
           {/* Featured Projects - ثانياً */}
-          <section className="bg-slate-100 py-20 dark:bg-slate-900 theme-transition">
+          <section className="bg-gradient-to-b from-slate-100 to-white dark:from-slate-900 dark:to-slate-950 py-20 theme-transition">
             <div className="container">
               <div className="mx-auto max-w-2xl text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white theme-transition sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white theme-transition sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
                   أبرز مشاريعنا
                 </h2>
                 <p className="mt-4 text-slate-700 dark:text-slate-300 theme-transition">
@@ -214,7 +223,11 @@ export default function Home() {
                 ))}
               </div>
               <div className="mt-10 text-center">
-                <Button variant="outline" className="border-slate-200 dark:border-slate-700 theme-transition" asChild>
+                <Button 
+                  variant="outline" 
+                  className="border-slate-200 dark:border-slate-700 theme-transition hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" 
+                  asChild
+                >
                   <Link href="/projects">عرض جميع المشاريع</Link>
                 </Button>
               </div>
@@ -222,10 +235,10 @@ export default function Home() {
           </section>
 
           {/* Services Section - ثالثاً */}
-          <section id="services" className="py-20">
+          <section id="services" className="py-20 bg-gradient-to-b from-white to-slate-50 dark:from-slate-950 dark:to-slate-900">
             <div className="container">
               <div className="mx-auto max-w-2xl text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white theme-transition sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white theme-transition sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
                   خدماتنا
                 </h2>
                 <p className="mt-4 text-slate-700 dark:text-slate-300 theme-transition">
@@ -246,7 +259,7 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="secondary"
-                  className="bg-blue-200 text-blue-900 border-blue-300 hover:bg-blue-300"
+                  className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                   asChild
                 >
                   <Link href="/services">عرض جميع الخدمات</Link>
@@ -256,10 +269,10 @@ export default function Home() {
           </section>
 
           {/* Value Proposition Section - رابعاً */}
-          <section className="bg-blue-900 py-20">
+          <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-20">
             <div className="container">
               <div className="mx-auto max-w-2xl text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100">
                   قيمنا
                 </h2>
                 <p className="mt-4 text-blue-100">
@@ -268,13 +281,13 @@ export default function Home() {
               </div>
               <div className="mt-16 grid gap-8 md:grid-cols-3">
                 {valueCards.map((card) => (
-                  <Card key={`value-card-${card.id}`} className="bg-white text-slate-900 shadow-lg">
+                  <Card key={`value-card-${card.id}`} className="bg-white/10 backdrop-blur-sm text-white border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                     <CardContent className="flex flex-col items-center text-center p-6">
-                      <div className="h-12 w-12 text-blue-600 mb-4">
+                      <div className="h-12 w-12 text-cyan-300 mb-4">
                         {card.icon}
                       </div>
                       <h3 className="text-xl font-bold mb-2">{card.title}</h3>
-                      <p className="text-slate-700">{card.description}</p>
+                      <p className="text-blue-100">{card.description}</p>
                     </CardContent>
                   </Card>
                 ))}
@@ -283,10 +296,10 @@ export default function Home() {
           </section>
 
           {/* Call to Action - خامساً */}
-          <section className="py-20">
+          <section className="py-20 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
             <div className="container">
               <div className="mx-auto max-w-3xl text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white theme-transition sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white theme-transition sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
                   هل أنت جاهز لنقل مشروعك إلى المستوى التالي؟
                 </h2>
                 <p className="mt-4 text-slate-700 dark:text-slate-300 theme-transition">
@@ -295,7 +308,7 @@ export default function Home() {
                 <div className="mt-8 flex flex-col sm:flex-row flex-wrap justify-center gap-4">
                   <Button
                     size="lg"
-                    className="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-md px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg shadow-md transition-all w-full sm:w-auto"
+                    className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold rounded-full px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
                     asChild
                   >
                     <Link href="/contact">احجز استشارة مجانية</Link>

@@ -252,7 +252,7 @@ export default function AccountingSoftwareProjectPage() {
                       phone: formData.get('phone'),
                       companyName: formData.get('companyName')
                     }
-                    
+
                     fetch('/api/send-download-email', {
                       method: 'POST',
                       headers: {

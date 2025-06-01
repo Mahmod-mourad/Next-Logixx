@@ -1,0 +1,58 @@
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.left-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.right-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Adjust for larger screens */
+@media (min-width: 768px) {
+  .slide-content {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .left-content {
+    align-items: flex-start;
+  }
+
+  .right-content {
+    justify-content: flex-end;
+  }
+
+  /* Adjust pagination dots position */
+  .swiper-pagination {
+    bottom: 40px !important; /* Adjust this value as needed */
+  }
+}
+
+/* Adjust pagination dots position within the container */
+.home-slider-container :global(.swiper-pagination) {
+  position: absolute;
+  bottom:3rem; /* Increased value to set the distance from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* Ensure dots are above other content if needed */
+} 
