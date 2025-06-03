@@ -73,7 +73,11 @@ export function ProjectCard({
           className="w-full border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700 theme-transition" 
           asChild
         >
-          <Link href={`/projects/${id}`}>عرض التفاصيل</Link>
+          <Link href={`/projects/${
+            id === 'e-commerce' ? 'ecommerce-website' : 
+            id === 'marketing-campaign' ? 'desktop-application' : 
+            id
+          }`}>عرض التفاصيل</Link>
         </Button>
       </div>
     </div>

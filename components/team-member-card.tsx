@@ -11,7 +11,13 @@ export function TeamMemberCard({ name, position, description, image }: TeamMembe
   return (
     <div className="group flex flex-col items-center text-center">
       <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-white dark:border-slate-800 shadow-md transition-transform duration-300 group-hover:scale-105 theme-transition">
-        <Image src={image || "/assets/images/placeholder.png"} alt={name} className="object-cover" fill />
+        <Image 
+          src={image || "/assets/images/placeholder.png"} 
+          alt={name} 
+          fill
+          sizes="(max-width: 768px) 192px, 192px"
+          className="object-cover" 
+        />
       </div>
       <div className="mt-6">
         <h3 className="text-xl font-bold text-slate-900 dark:text-white theme-transition">{name}</h3>

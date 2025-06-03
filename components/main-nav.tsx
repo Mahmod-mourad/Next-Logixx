@@ -25,7 +25,13 @@ export function MainNav() {
         {/* Logo + Brand */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="h-12 w-12 rounded-full overflow-hidden border-4 border-blue-800 bg-white flex items-center justify-center transition-all group-hover:scale-105">
-            <Image src="/assets/images/services/logo.jpg" alt="Next Logix Logo" width={48} height={48} className="w-full h-full object-contain" />
+            <Image 
+              src="/assets/images/services/logo.jpg" 
+              alt="Next Logix Logo" 
+              width={48} 
+              height={48} 
+              className="w-auto h-auto object-contain" 
+            />
           </div>
           <span className="text-xl font-extrabold text-white tracking-tight">Next Logix</span>
         </Link>
@@ -76,7 +82,13 @@ export function MainNav() {
             <div className="flex items-center justify-between px-6 py-5 border-b border-blue-800">
               <div className="flex items-center gap-3">
                 <div className="h-12 w-12 rounded-full overflow-hidden border-2 border-white bg-white flex items-center justify-center shadow">
-                  <Image src="/assets/images/services/logo.jpg" alt="Next Logix Logo" width={48} height={48} className="w-full h-full object-contain" />
+                  <Image 
+                    src="/assets/images/services/logo.jpg" 
+                    alt="Next Logix Logo" 
+                    width={48} 
+                    height={48} 
+                    className="w-auto h-auto object-contain" 
+                  />
                 </div>
                 <span className="text-xl font-extrabold text-white tracking-tight drop-shadow">Next Logix</span>
               </div>

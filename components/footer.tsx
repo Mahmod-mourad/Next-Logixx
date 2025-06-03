@@ -17,7 +17,7 @@ export function Footer() {
                 alt="Next Logix Logo"
                 width={40}
                 height={40}
-                className="rounded-full object-contain"
+                className="w-auto h-auto object-contain rounded-full"
               />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                 Next Logix
