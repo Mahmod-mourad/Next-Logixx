@@ -72,7 +72,7 @@ export function Footer() {
                 <li className="flex space-x-4 rtl:space-x-reverse text-xl">
                   <a href="https://wa.me/201020384694" target="_blank" rel="noopener noreferrer" aria-label="واتساب" className="hover:text-green-500"><FaWhatsapp /></a>
                   <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="لينكدإن" className="hover:text-blue-500"><FaLinkedin /></a>
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="فيسبوك" className="hover:text-blue-400"><FaFacebook /></a>
+                  <a href="https://www.facebook.com/profile.php?id=61575214867192" target="_blank" rel="noopener noreferrer" aria-label="فيسبوك" className="hover:text-blue-400"><FaFacebook /></a>
                 </li>
               </ul>
             </div>
