@@ -16,10 +16,8 @@ export function Providers({ children }: { children: ReactNode }) {
       disableTransitionOnChange
     >
       <div dir="rtl">
-        <AnimatePresence>
-          <div key={pathname}>
-            {children}
-          </div>
+        <AnimatePresence mode="wait">
+          {children}
         </AnimatePresence>
       </div>
     </ThemeProvider>
