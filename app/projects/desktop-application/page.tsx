@@ -20,5 +20,5 @@ export default function DesktopAppPage() {
       </main>
       <Footer />
     </div>
-  )
+   )
 } 
